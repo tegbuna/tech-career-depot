@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href='/css/style.css'/>
+
+    <title> Tech Career Depot</title>
+</head>
+<body>
+    <!-- Begin hero section here -->
+    <section class="hero">
+        <h1 class='logo'> &lt;Tech Career Depot/&gt; </h1>
+        <p>...find yourself in technology.</p> <br>
+        <article>
+            Are you curious about what it takes to get into the IT technology field? Explore tech careers in just one stop and begin a new journey today!
+        </article><br>
+    </section>
+
+    <h1>Tech Careers</h1>
+       
+    <fieldset>
+     <legend>Choose a career to learn more!</legend>
+   
+    <form action="/careers" method=POST>
+        <label for="Careers">
+            <select name="careers">
+            <option value='data-science'>Data Science</option>
+            <option value='software-engineering'>Software Engineering</option>
+            <option value='uxui-design'>UX/UI Design</option>
+            </select>
+        </label>
+    <!-- *** Need to link  submit to corresponding view-->
+        <input type="submit" value="Let's Go!">
+    </form>
+     </fieldset>
+
+</body>
+</html>
