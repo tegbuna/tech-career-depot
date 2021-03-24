@@ -7,6 +7,7 @@ const careersCtrl = require('../controllers/careers');
 //GET /careers/new
 router.get('/', careersCtrl.index); /*NTS - new from flights demo*/
 router.get('/new', careersCtrl.new);
+   
 //POST
 router.post('/', careersCtrl.create);
 

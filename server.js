@@ -7,10 +7,6 @@ const port = 3000
 const indexRouter = require('./routes/index');
 const careersRouter = require('./routes/careers');
 
-
-
-
-
 // Set up express app 
 const app = express();
 

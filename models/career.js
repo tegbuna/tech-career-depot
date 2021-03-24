@@ -8,7 +8,7 @@ const careerSchema = new Schema ({
     name: {
         type: String
 },
-    define: { 
+    definition: { 
         type: String
    },
     description: {
