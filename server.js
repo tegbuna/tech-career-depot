@@ -4,8 +4,10 @@ const { Server } = require('mongodb');
 const morgan = require('morgan');
 const { index } = require('./controllers');
 const port = 3000
+const path = require('path');
 const indexRouter = require('./routes/index');
 const careersRouter = require('./routes/careers');
+const listsRouter = require('./routes/lists');
 
 
 // Set up express app 
@@ -15,22 +17,25 @@ const app = express();
 require('./config/database');
 
 //Configure the app with app.set()
+app.set('careers', path.join(__dirname, 'careers'));
 app.set('view engine', 'ejs');
 
 //Mount middleware with app.use()
 app.use(morgan('dev'));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({extended: false}));
-app.use('/dss', () => {
-    console.log(`This is from the tutorial`);
-});
+
+
+
 
 // Mount routes with app.use()
 app.use('/', indexRouter);
 app.use('/careers', careersRouter);
 app.use('/dss', careersRouter);
 app.use('/ses', careersRouter);
-app.use('/uxui', careersRouter);
+app.use('/uxuis', careersRouter);
+app.use('/lists', listsRouter);
+
 
 
 

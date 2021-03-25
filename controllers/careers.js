@@ -3,7 +3,7 @@ const Career = require('../models/career');
 // /*new*/
 function index(req, res) {
     Career.find({}, function(err, careers) {
-        res.render('careers/index', {
+        res.render('careers/dss', {
             careers
         })
     })
@@ -38,17 +38,18 @@ function softwareengineer(req, res) {
     res.render('/careers/ses');
 }
 
-function uxui(req, res) {
-    res.render('/careers/uxui');
+function uxuidesign(req, res) {
+    res.render('/careers/uxuis');
 }
+
+
 
 //Export careers controller (14)
 module.exports = {
-    index, /*new*/
-    // new: newCareer,
+    index, 
     datascience,
     softwareengineer,
-    uxui,
+    uxuidesign,
     create
 }
 
