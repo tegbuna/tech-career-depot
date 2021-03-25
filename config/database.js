@@ -1,8 +1,9 @@
 //Configure Mongoose Module 
 // **- Setup MongoDB Atlas (7)
 const mongoose = require('mongoose');
+require('dotenv/config');
 
-mongoose.connect('mongodb+srv://admin:bbc1234@cluster0.rra7q.mongodb.net/tech-career-depot?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DB_CONNECTION, {
     // avoid depreciation warnings:
     useNewURLParser: true,
     useCreateIndex: true,

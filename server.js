@@ -7,6 +7,7 @@ const port = 3000
 const indexRouter = require('./routes/index');
 const careersRouter = require('./routes/careers');
 
+
 // Set up express app 
 const app = express();
 
@@ -20,10 +21,17 @@ app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.urlencoded({extended: false}));
+app.use('/dss', () => {
+    console.log(`This is from the tutorial`);
+});
 
 // Mount routes with app.use()
 app.use('/', indexRouter);
 app.use('/careers', careersRouter);
+app.use('/dss', careersRouter);
+app.use('/ses', careersRouter);
+app.use('/uxui', careersRouter);
+
 
 
 // Tell app to listen 

@@ -3,7 +3,7 @@ const Career = require('../models/career');
 // /*new*/
 function index(req, res) {
     Career.find({}, function(err, careers) {
-        rese.render('careers/index', {
+        res.render('careers/index', {
             careers
         })
     })
@@ -15,7 +15,7 @@ function create(req, res) {
     // //split if it's not an empty string
     // if (req.body.characteristics) req.body.characteristics = req.body.characteristics.split(',');
 
-    const career = new Career(req.body);
+    const career = newCareer(req.body);
 
     career.save(function(err) {
         //handle errors
@@ -30,11 +30,25 @@ function newCareer(req, res) {
     res.render('careers/new');
 }
 
+function datascience(req, res) {
+    res.render('/careers/dss');
+}
+
+function softwareengineer(req, res) {
+    res.render('/careers/ses');
+}
+
+function uxui(req, res) {
+    res.render('/careers/uxui');
+}
 
 //Export careers controller (14)
 module.exports = {
     index, /*new*/
-    new: newCareer,
+    // new: newCareer,
+    datascience,
+    softwareengineer,
+    uxui,
     create
 }
 
